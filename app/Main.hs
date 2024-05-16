@@ -9,3 +9,4 @@ main = do
   someFunc
   someFunc
   putStrLn $ show iHat
+  putStrLn $ show jHat
