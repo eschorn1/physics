@@ -1,12 +1,10 @@
 module Main (main) where
 
-import Lib
-import Vectors
+--import Lib
+--import Vectors
+import Ch2
 
 
 main :: IO ()
 main = do
-  someFunc
-  someFunc
-  putStrLn $ show iHat
-  putStrLn $ show jHat
+  putStrLn $ "\n\n" ++ ch2

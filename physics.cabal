@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Lib
+      Utils
       Vectors
   other-modules:
       Paths_physics
@@ -41,6 +42,7 @@ library
 executable physics-exe
   main-is: Main.hs
   other-modules:
+      Ch2
       Paths_physics
   autogen-modules:
       Paths_physics

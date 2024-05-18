@@ -1,5 +1,6 @@
 module Vectors ((^+^), (^-^), (*^), (^*), (^/), (<.>), (><),
-  iHat, jHat, kHat, Vec, vec, xComp, yComp, zComp, zeroV) where
+  angle, angle2D, degrees2Radians, iHat, jHat, kHat, magnitude, polarCoord, radians2Degrees,
+  Vec, vec, vec2D, xComp, yComp, zComp, zeroV) where
 
 type R = Double
 
@@ -44,6 +45,9 @@ showDouble x
 vec :: R -> R -> R -> Vec
 vec = Vec
 
+vec2D :: R -> R -> Vec
+vec2D r degrees = vec (r * cos (degrees2Radians degrees)) (r * sin (degrees2Radians degrees)) 0
+
 iHat :: Vec
 iHat = vec 1 0 0
 
@@ -55,3 +59,24 @@ kHat = vec 0 0 1
 
 zeroV :: Vec
 zeroV = vec 0 0 0
+
+magnitude :: Vec -> R
+magnitude v = sqrt $ (xComp v)^(2 :: Integer) + (yComp v)^(2 :: Integer) + (zComp v)^(2 :: Integer)
+
+angle2D :: Vec -> R
+angle2D v = result
+  where
+    res = radians2Degrees $ atan2 (yComp v) (xComp v)  -- note: atan2
+    result = if res < 0 then res + 360 else res        -- maybe put this in conversion fns?
+
+angle :: Vec -> Vec -> R  -- in radians
+angle a b = acos ((a <.> b) / (magnitude a * magnitude b))
+
+polarCoord :: Vec -> (R, R)
+polarCoord v = (magnitude v, angle2D v)
+
+radians2Degrees :: R -> R
+radians2Degrees r = (r * 360) / (2 * pi)
+
+degrees2Radians :: R -> R
+degrees2Radians d = (d * 2 * pi) / 360
