@@ -7,7 +7,7 @@ import Vectors
 
 ch3 :: String
 ch3 = concat [a ++ "\n" | a <- [p25, p27, p29, p35, p37, p41, p43, p45, p49,
-             p51, p53, p55]] -- , p57, p59, p61, p63, p65, p67, p69]]
+             p51, p53, p55, p57, p59 ]] -- , p61, p63, p65, p67, p69]]
 
 
 p25 :: String
@@ -103,10 +103,24 @@ p53 = prettyPrint "P3.53 " " c=" (x tf) " d = " (v tf)
 p55 :: String
 p55 = prettyPrint "P3.55 " " t=" t " a=" a
   where
-    v0 = 0
     vf = 30
     xf = 1.8
     -- vf = v0 + a*t; 30 = a*t; a = 30/t
     -- xf = x0 + v0*t + 0.5*a*t^2; 1.8 = 0.5*a*t^2; 1.8 = 0.5 * a*t * t; 1.8 = 30 * t
-    t = 2 * 1.8 / 30 :: Double
+    t = 2 * xf / vf :: Double
     a = 30 / t
+
+p57 :: String
+p57 = prettyPrint "P3.57 " " a_avg=" a_avg " x=" x
+  where
+    t0 = 0; tf = 3.9; dt = tf - t0 :: Double
+    a_avg = 26.8 / dt
+    x = 0 + 0 * tf + 0.5 * a_avg * tf**2
+
+p59 :: String
+p59 = prettyPrint "P3.59 " " a=" a " t=" t
+  where
+      vf = 65; x = 0.25
+      t = vf / a
+      -- x = x0 + v0*t + 0.5*a*t^2; x = 0.5*a*(vf/a)^2; x = 0.5*vf^2/a; a = 0.5*vf^2/x
+      a = 0.5 * vf**2 / x :: Double
