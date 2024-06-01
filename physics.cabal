@@ -42,8 +42,7 @@ library
 executable physics-exe
   main-is: Main.hs
   other-modules:
-      Ch2
-      Ch3
+      Ch1
       Paths_physics
   autogen-modules:
       Paths_physics

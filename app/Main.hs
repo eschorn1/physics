@@ -1,11 +1,7 @@
 module Main (main) where
 
-import Ch2
-import Ch3
-
+import Ch1
 
 main :: IO ()
 main = do
-  putStrLn $ "\n\n" ++ ch2
-  putStrLn $ "\n\n" ++ ch3
-
+  putStrLn $ "\n\n" ++ ch1
