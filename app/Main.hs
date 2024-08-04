@@ -28,3 +28,6 @@ cosDeg = cos . degrees2Radians
 
 sinDeg :: Double -> Double
 sinDeg = sin . degrees2Radians
+
+tanDeg :: Double -> Double
+tanDeg x = sinDeg x / cosDeg x
