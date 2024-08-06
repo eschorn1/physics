@@ -31,3 +31,6 @@ sinDeg = sin . degrees2Radians
 
 tanDeg :: Double -> Double
 tanDeg x = sinDeg x / cosDeg x
+
+g :: Double
+g = 9.8
