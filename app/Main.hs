@@ -5,7 +5,15 @@ module Main (main) where
 -- stack repl
 -- :r
 
+-- To write...
+--   a. vec = cart | polar
+--      show polar
+--   b. toPolar, toCart
+--   c. vDot
+
+
 import Ch1
+import Trig
 import Vectors
 
 main :: IO ()
@@ -23,14 +31,14 @@ quadratic a b c = (res1, res2)
 norm2 :: Double -> Double -> Double
 norm2 x y = sqrt (x * x + y * y)
 
-cosDeg :: Double -> Double
-cosDeg = cos . degrees2Radians
-
-sinDeg :: Double -> Double
-sinDeg = sin . degrees2Radians
-
-tanDeg :: Double -> Double
-tanDeg x = sinDeg x / cosDeg x
+--cosDeg :: Double -> Double
+--cosDeg = cos . degrees2Radians
+--
+--sinDeg :: Double -> Double
+--sinDeg = sin . degrees2Radians
+--
+--tanDeg :: Double -> Double
+--tanDeg x = sinDeg x / cosDeg x
 
 g :: Double
 g = 9.8
