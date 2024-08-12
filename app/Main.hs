@@ -13,8 +13,8 @@ module Main (main) where
 
 
 import Ch1
-import Trig
-import Vectors
+-- import Trig
+-- import Vectors
 
 main :: IO ()
 main = do

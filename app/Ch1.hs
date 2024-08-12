@@ -3,7 +3,7 @@ module Ch1 (ch1) where
 -- stack repl   ,   :l Ch2
 
 import Utils
-import Vectors
+-- import Vectors
 
 ch1 :: String
 ch1 = concat [a ++ "\n" | a <- [p1, p3, p5, p7, p9,
