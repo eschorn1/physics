@@ -21,6 +21,8 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- integration >= 0.2.1
+- hmatrix-gsl >= 0.19.0.1
 
 ghc-options:
 - -Wall
@@ -29,7 +31,7 @@ ghc-options:
 - -Wincomplete-record-updates
 - -Wincomplete-uni-patterns
 - -Wmissing-export-lists
-- -Wmissing-home-modules
+- -Wno-missing-home-modules
 - -Wpartial-fields
 - -Wredundant-constraints
 

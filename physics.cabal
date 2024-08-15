@@ -25,15 +25,18 @@ source-repository head
 
 library
   exposed-modules:
+      Constants
       Lib
       Trig
       Utils
       Vectors
   hs-source-dirs:
       src
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wno-missing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , hmatrix-gsl >=0.19.0.1
+    , integration >=0.2.1
   default-language: Haskell2010
 
 executable physics-exe
@@ -42,9 +45,11 @@ executable physics-exe
       Ch1
   hs-source-dirs:
       app
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wno-missing-home-modules -Wpartial-fields -Wredundant-constraints -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , hmatrix-gsl >=0.19.0.1
+    , integration >=0.2.1
     , physics
   default-language: Haskell2010
 
@@ -53,8 +58,10 @@ test-suite physics-test
   main-is: Spec.hs
   hs-source-dirs:
       test
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wno-missing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , hmatrix-gsl >=0.19.0.1
+    , integration >=0.2.1
     , physics
   default-language: Haskell2010
